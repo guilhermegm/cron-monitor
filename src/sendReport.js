@@ -11,6 +11,7 @@ const main = async () => {
         endedAt: new Date().toISOString(),
         log: success ? process.argv[2] : process.argv[3],
         name: process.argv[4],
+        startedAt: process.argv[5],
         success
       }
     );

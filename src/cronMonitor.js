@@ -1,5 +1,6 @@
-const logOut = [];
 const logErr = [];
+const logOut = [];
+const startedAt = new Date().toISOString();
 
 const hookStdout = callback => {
   var originalWrite = process.stdout.write;
@@ -43,7 +44,9 @@ var exec = require("child_process").exec;
 
 process.on("exit", code => {
   exec(
-    `node ${__dirname}/sendReport.js '${logOut.join("")}' '${logErr.join("")}' '${module.parent.filename.split('/').pop()}'`
+    `node ${__dirname}/sendReport.js '${logOut.join("")}' '${logErr.join(
+      ""
+    )}' '${module.parent.filename.split("/").pop()}' '${startedAt}'`
   );
   console.log(code);
 });

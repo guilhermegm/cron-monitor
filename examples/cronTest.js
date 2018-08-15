@@ -9,7 +9,7 @@ const main = async () => {
   await sleep(100)
   console.log('two')
   // throw new Error('Erroooor')
-  await sleep(200)
+  await sleep(1000)
   console.log('three')
   console.log('script ended')
 }
